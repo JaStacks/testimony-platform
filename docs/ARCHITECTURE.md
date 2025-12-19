@@ -46,30 +46,30 @@ organizations
 
 ```
 ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-│    Client            │     │ Edge Function │     │         Mux          │
-│   (Browser)      │     │                          │     │                         │
+│    Client    │     │ Edge Function│     │         Mux  │
+│   (Browser)  │     │              │     │              │
 └──────┬───────┘     └──────┬───────┘     └──────┬───────┘
-              │                               │                                  │
-                │ 1. Request upload                                   │
-                │───────────────────>│                          │
-                │                    │ 2. Create upload               │
-                │                    │───────────────────>
-                │                    │                    │
-                │                    │ 3. Signed URL    
-                │                    │<───────────────────
-                │ 4. Upload URL 
-                │<───────────────────│
-                │                    │                    │
-                │ 5. Direct upload (no server bandwidth) │
-                │────────────────────────────────────────>│
-                │                    │                    │
-                │                    │ 6. Webhook: ready  │
-                │                    │<───────────────────│
-                │                    │                    │
-                │                    │ 7. Update DB       │
-                │                    │ (playback ID,      │
-                │                    │  captions, etc.)   │
-                │                    │                    │
+       │                    │                    │
+       │ 1. Request upload                       │
+       │───────────────────>│                    │
+       │                    │ 2. Create upload   │
+       │                    │───────────────────>
+       │                    │                    │
+       │                    │ 3. Signed URL    
+       │                    │<───────────────────
+       │ 4. Upload URL 
+       │<───────────────────│
+       │                    │                    │
+       │ 5. Direct upload (no server bandwidth)  │
+       │────────────────────────────────────────>│
+       │                    │                    │
+       │                    │ 6. Webhook: ready  │
+       │                    │<───────────────────│
+       │                    │                    │
+       │                    │ 7. Update DB       │
+       │                    │ (playback ID,      │
+       │                    │  captions, etc.)   │
+       │                    │                    │
 ```
 
 ### Why Mux Direct Uploads?
